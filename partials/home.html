@@ -1,1 +1,15 @@
-<h2>{{vw.message}}</h2>
+<div>
+  <form>
+    <span>Search by Category :</span>
+    <select>
+      <option>
+
+      </option>
+    </select>
+  </form>
+</div>
+<div ng-repeat='item in vw.teas'>
+  <p>
+    {{item.name}}
+  </p>
+</div>

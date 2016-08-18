@@ -1,4 +1,5 @@
-app.controller('HomeController',function($scope){
+app.controller('HomeController',function($scope, TeasService){
   $scope.vw = {};
-  $scope.vw.message = 'home success!';
+  $scope.vw.teas = TeasService.all;
+  $scope.vw.categories = categoriesArray(TeasService.all);
 })

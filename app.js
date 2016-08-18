@@ -6,6 +6,12 @@ app.config(function($routeProvider, $locationProvider){
       templateUrl : 'partials/home.html',
       controller : 'HomeController'
     })
+    .when('/about',{
+      templateUrl : 'partials/about.html',
+    })
+    .when('/contact',{
+      templateUrl : 'partials/contact.html',
+    })
     .when('/checkout',{
       templateUrl : 'partials/checkout.html',
       controller : 'CheckoutController'
