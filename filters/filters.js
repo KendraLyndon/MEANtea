@@ -5,29 +5,20 @@ app.filter('inStock',function(){
 })
 app.filter('name', function(){
   return function(items, name){
-    var filtered = [];
     if(name){
-      items.forEach(function(item){
-        if(item.name.includes(name)){
-          filtered.push(item)
-        }
+      return items.filter(function(item){
+        return item.name.includes(name)
       })
-      return filtered;
     }
     return items;
   }
 })
 app.filter('category', function(){
   return function(items, category){
-    console.log(category);
-    var filtered = [];
     if(category){
-      items.forEach(function(item){
-        if(item.categories.includes(category)){
-          filtered.push(item)
-        }
+      return items.filter(function(item){
+        return item.categories.includes(category)
       })
-      return filtered;
     }
     return items;
   }
