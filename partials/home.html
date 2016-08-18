@@ -1,46 +1,44 @@
 <div>
-  <form>
-    <span>Search by Category :</span>
-    <select>
-      <option ng-repeat='category in vw.categories'>
-        {{category}}
-      </option>
-    </select>
-    <label for='search'>Search by name :</label>
-    <input type='text' name='search' ng-model='vw.search'/>
-  </form>
-  <a id='checkout-link' href='/checkout'>Checkout Bag</a>
-  <div class='container main'>
+  <section class='container main-header'>
+    <form>
+      <span>Search by Category :</span>
+      <select ng-model='vw.searchCategory'>
+        <option ng-repeat='category in vw.categories' value='{{category}}'>
+          {{category}}
+        </option>
+      </select>
+      <label for='search'>Search by name :</label>
+      <input type='text' name='search' ng-model='vw.searchName'/>
+    </form>
+    <a id='checkout-link' class='btn' href='/checkout'>Checkout Bag</a>
+  </section>
+  <section class='container main'>
     <div class='row'>
       <div class='col-lg-4 items-header'>
         <span>Tea</span>
       </div>
       <div class='col-lg-8 items-header'>
         <span>Information</span>
-        <span>Sort by price :</span>
-        <select>
-          <option>
-            Low to High
-          </option>
-          <option>
-            High to Low
-          </option>
-        </select>
+        <div class='items-header-right'>
+          <span>Sort by price :</span>
+          <select>
+            <option>Low to High</option>
+            <option>High to Low</option>
+          </select>
+        </div>
       </div>
     </div>
-    <div class='row item' ng-repeat='item in vw.teas'>
+    <div class='row item' ng-repeat='item in vw.teas | name:vw.searchName | category:vw.searchCategory'>
       <div class='col-lg-4 item-image'>
         <img ng-src='{{item.imageUrl}}'/>
       </div>
       <div class='col-lg-8 item-info'>
-        <div>
+        <div class='item-name-row'>
           <h3>{{item.name}}</h3>
           <span>Quantity :</span><select>
-            <option ng-repeat='num in vw.quantities'>
-              {{num}}
-            </option>
+            <option ng-repeat='num in vw.quantities'>{{num}}</option>
           </select>
-          <button>Add to Bag</button>
+          <button class='btn'>Add to Bag</button>
         </div>
         <h5>Price : <small>{{item.price/100 | currency}}</small></h5>
         <h5>Caffeine Scale : <small>{{item.caffeineScale}}</small></h5>
@@ -53,5 +51,5 @@
         </ul>
       </div>
     </div>
-  </div>
+  </section>
 </div>
