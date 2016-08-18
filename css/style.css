@@ -4,3 +4,18 @@
 main{
   min-height: 75vh;
 }
+form{
+  display: inline;
+}
+.item{
+    border: 1px solid #E6E7E8;
+}
+.items-header{
+  border: 1px solid #E6E7E8;
+}
+.item-image, .item-info{
+  border: 1px solid #E6E7E8;
+}
+#checkout-link{
+  display: inline;
+}

@@ -2,14 +2,56 @@
   <form>
     <span>Search by Category :</span>
     <select>
-      <option>
-
+      <option ng-repeat='category in vw.categories'>
+        {{category}}
       </option>
     </select>
+    <label for='search'>Search by name :</label>
+    <input type='text' name='search' ng-model='vw.search'/>
   </form>
-</div>
-<div ng-repeat='item in vw.teas'>
-  <p>
-    {{item.name}}
-  </p>
+  <a id='checkout-link' href='/checkout'>Checkout Bag</a>
+  <div class='container main'>
+    <div class='row'>
+      <div class='col-lg-4 items-header'>
+        <span>Tea</span>
+      </div>
+      <div class='col-lg-8 items-header'>
+        <span>Information</span>
+        <span>Sort by price :</span>
+        <select>
+          <option>
+            Low to High
+          </option>
+          <option>
+            High to Low
+          </option>
+        </select>
+      </div>
+    </div>
+    <div class='row item' ng-repeat='item in vw.teas'>
+      <div class='col-lg-4 item-image'>
+        <img ng-src='{{item.imageUrl}}'/>
+      </div>
+      <div class='col-lg-8 item-info'>
+        <div>
+          <h3>{{item.name}}</h3>
+          <span>Quantity :</span><select>
+            <option ng-repeat='num in vw.quantities'>
+              {{num}}
+            </option>
+          </select>
+          <button>Add to Bag</button>
+        </div>
+        <h5>Price : <small>{{item.price/100 | currency}}</small></h5>
+        <h5>Caffeine Scale : <small>{{item.caffeineScale}}</small></h5>
+        <h5>Ingredients : <small>{{item.ingredients}}</small></h5>
+        <h5>Rating : <small>{{item.rating}}</small></h5>
+        <h5>In Stock? <small>{{item.inStock | inStock}}</small></h5>
+        <h5>Categories :</h5>
+        <ul>
+          <li ng-repeat='category in item.categories'>{{category}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
