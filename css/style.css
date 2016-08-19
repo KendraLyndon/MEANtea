@@ -12,38 +12,11 @@ main{
 form{
   display: inline;
 }
-.main-header{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+table{
+  border-collapse: collapse;
 }
-.main-header > form{
-  flex-grow: 2;
-}
-.main{
-    border: 1px solid #E6E7E8;
-}
-.item, .items-header{
-  border-bottom: 1px solid #E6E7E8;
-}
-.items-header{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  height: 2.5em;
-}
-.item-image{
-  height: 100%;
-  border-right: 1px solid #E6E7E8;
-}
-.item-name-row{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.item-name-row > h3 {
-  flex-grow: 2;
+thead, tr, .tea-image{
+  border: 1px solid #E6E7E8;
 }
 #checkout-link{
   display: inline;

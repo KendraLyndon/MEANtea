@@ -12,44 +12,42 @@
     </form>
     <a id='checkout-link' class='btn' href='/checkout'>Checkout Bag</a>
   </section>
-  <section class='container main'>
-    <div class='row'>
-      <div class='col-lg-4 items-header'>
-        <span>Tea</span>
-      </div>
-      <div class='col-lg-8 items-header'>
-        <span>Information</span>
-        <div class='items-header-right'>
-          <span>Sort by price :</span>
-          <select>
-            <option>Low to High</option>
-            <option>High to Low</option>
-          </select>
-        </div>
-      </div>
-    </div>
-    <div class='row item' ng-repeat='item in vw.teas | name:vw.searchName | category:vw.searchCategory'>
-      <div class='col-lg-4 item-image'>
-        <img ng-src='{{item.imageUrl}}'/>
-      </div>
-      <div class='col-lg-8 item-info'>
-        <div class='item-name-row'>
+  <table class='container'>
+    <thead>
+      <th>Tea</th>
+      <th>Information</th>
+      <th>Sort by price :
+        <select>
+          <option>Low to High</option>
+          <option>High to Low</option>
+        </select>
+      </th>
+    </thead>
+    <tbody>
+      <tr ng-repeat='item in vw.teas | name:vw.searchName | category:vw.searchCategory'>
+        <td class='tea-image'>
+          <img ng-src='{{item.imageUrl}}'/>
+        </td>
+        <td>
           <h3>{{item.name}}</h3>
-          <span>Quantity :</span><select>
+          <h5>Price : <small>{{item.price/100 | currency}}</small></h5>
+          <h5>Caffeine Scale : <small>{{item.caffeineScale}}</small></h5>
+          <h5>Ingredients : <small>{{item.ingredients}}</small></h5>
+          <h5>Rating : <small>{{item.rating}}</small></h5>
+          <h5>In Stock? <small>{{item.inStock | inStock}}</small></h5>
+          <h5>Categories :</h5>
+          <ul>
+            <li ng-repeat='category in item.categories'>{{category}}</li>
+          </ul>
+        </td>
+        <td>
+          <span>Quantity :</span>
+          <select>
             <option ng-repeat='num in vw.quantities'>{{num}}</option>
           </select>
           <button class='btn'>Add to Bag</button>
-        </div>
-        <h5>Price : <small>{{item.price/100 | currency}}</small></h5>
-        <h5>Caffeine Scale : <small>{{item.caffeineScale}}</small></h5>
-        <h5>Ingredients : <small>{{item.ingredients}}</small></h5>
-        <h5>Rating : <small>{{item.rating}}</small></h5>
-        <h5>In Stock? <small>{{item.inStock | inStock}}</small></h5>
-        <h5>Categories :</h5>
-        <ul>
-          <li ng-repeat='category in item.categories'>{{category}}</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
