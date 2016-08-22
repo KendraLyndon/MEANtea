@@ -3,6 +3,7 @@
     <form>
       <span>Search by Category :</span>
       <select ng-model='vw.searchCategory'>
+        <option value=''></option>
         <option ng-repeat='category in vw.categories' value='{{category}}'>
           {{category}}
         </option>
@@ -17,14 +18,14 @@
       <th>Tea</th>
       <th>Information</th>
       <th class='th-sort'>Sort by price :
-        <select>
-          <option>Low to High</option>
-          <option>High to Low</option>
+        <select ng-model='vw.priceOrder'>
+          <option value='price'>Low to High</option>
+          <option value='-price'>High to Low</option>
         </select>
       </th>
     </thead>
     <tbody>
-      <tr ng-repeat='item in vw.teas | name:vw.searchName | category:vw.searchCategory'>
+      <tr ng-repeat='item in vw.teas | name:vw.searchName | category:vw.searchCategory | orderBy:vw.priceOrder'>
         <td class='tea-image'>
           <img ng-src='{{item.imageUrl}}'/>
         </td>

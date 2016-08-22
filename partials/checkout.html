@@ -19,10 +19,10 @@
         <h5>Rating : <small>{{item.rating}}</small></h5>
       </td>
       <td>
-        <div ng-show='item.quantitySet'>
+        <div ng-hide='item.quantitySet'>
           <h5>{{item.quantity}}</h5>
         </div>
-        <div ng-hide='item.quantitySet'>
+        <div ng-show='item.quantitySet'>
           <select ng-model='item.quantity'>
             <option value='1' selected>1</option>
             <option value='2'>2</option>
