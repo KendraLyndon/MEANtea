@@ -3,6 +3,17 @@ app.filter('inStock',function(){
     return input ? 'Yes' : 'No';
   }
 })
+app.filter('bagFilter',function(){
+  return function(bag){
+    var quantity = 0;
+    if(bag){
+      bag.forEach(function(product){
+        quantity += product.quantity;
+      })
+    }
+    return quantity > 0 ? '('+quantity+')' : ': empty';
+  }
+})
 app.filter('name', function(){
   return function(items, name){
     if(name){

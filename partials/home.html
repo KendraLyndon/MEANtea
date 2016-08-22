@@ -10,7 +10,7 @@
       <label for='search'>Search by name :</label>
       <input type='text' name='search' ng-model='vw.searchName'/>
     </form>
-    <a id='checkout-link' class='btn' href='/checkout'>Checkout Bag</a>
+    <a id='checkout-link' class='btn' href='/checkout'>Checkout | Bag {{vw.bag | bagFilter}}</a>
   </section>
   <table class='container'>
     <thead>
@@ -42,10 +42,14 @@
         </td>
         <td>
           <span>Quantity :</span>
-          <select>
-            <option ng-repeat='num in vw.quantities'>{{num}}</option>
+          <select ng-model='quantity'>
+            <option value='1' selected>1</option>
+            <option value='2'>2</option>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5</option>
           </select>
-          <button class='btn'>Add to Bag</button>
+          <button ng-click='vw.add(item, quantity)' class='btn'>Add to Bag</button>
         </td>
       </tr>
     </tbody>

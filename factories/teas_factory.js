@@ -13,7 +13,6 @@ app.factory('TeasService', function(){
         "__v": 0,
         "categories": [ "dark", "cold"]
       },
-
       {
         "_id": "55c8ee82152165d244b98301",
         "name": "Incompactness syrup",

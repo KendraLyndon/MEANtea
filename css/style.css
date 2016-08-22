@@ -15,9 +15,13 @@ form{
 table{
   border-collapse: collapse;
 }
-thead, tr, .tea-image{
+thead, tr, .tea-image, td{
   border: 1px solid #E6E7E8;
 }
 #checkout-link{
   display: inline;
+  background-color: #E16D5F;
+  border: none;
+  border-radius: 4px;
+  color: white;
 }
