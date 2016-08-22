@@ -4,8 +4,8 @@
 <table class='container'>
   <thead>
     <th>Product</th>
-    <th>Quantity</th>
-    <th>Subtotal</th>
+    <th class='quantity'>Quantity</th>
+    <th class='subtotal'>Subtotal</th>
     <th></th>
   </thead>
   <tbody>
@@ -18,7 +18,7 @@
         <h5>Ingredients : <small>{{item.ingredients}}</small></h5>
         <h5>Rating : <small>{{item.rating}}</small></h5>
       </td>
-      <td>
+      <td class='quantity'>
         <div ng-hide='item.quantitySet'>
           <h5>{{item.quantity}}</h5>
         </div>
@@ -32,13 +32,13 @@
           </select>
         </div>
       </td>
-      <td>
+      <td class='subtotal'>
         {{findSubtotal(item) | currency }}
       </td>
-      <td>
-        <button ng-hide='item.quantitySet' ng-click='toggleQuantity(item)'>Edit</button>
-        <button ng-show='item.quantitySet' ng-click='toggleQuantity(item)'>Update</button>
-        <button ng-click='remove(item)'>Remove</button>
+      <td class='bag-buttons'>
+        <button class='btn yellow-btn' ng-hide='item.quantitySet' ng-click='toggleQuantity(item)'>Edit</button>
+        <button class='btn yellow-btn' ng-show='item.quantitySet' ng-click='toggleQuantity(item)'>Update</button>
+        <button ng-click='remove(item)' class='btn remove-btn'>Remove</button>
       </td>
     </tr>
   </tbody>

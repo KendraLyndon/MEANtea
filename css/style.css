@@ -33,6 +33,13 @@ input{
   border: 1px solid #cccccc;
   border-radius: 4px;
 }
+#checkout-link{
+  display: inline;
+  background-color: #E16D5F;
+  border: none;
+  border-radius: 4px;
+  color: white;
+}
 table{
   border-collapse: collapse;
   margin-top: 20px;
@@ -63,15 +70,18 @@ td > h3{
   text-align: right;
   vertical-align: top;
 }
-#checkout-link{
-  display: inline;
-  background-color: #E16D5F;
-  border: none;
-  border-radius: 4px;
+.quantity, .subtotal{
+  text-align: center;
+}
+.bag-buttons{
+  text-align: right;
+}
+.yellow-btn{
+  background-color: #EFAC56;
   color: white;
 }
-.add-button{
-  background-color: #EFAC56;
+.remove-btn{
+  background-color: #E16D5F;
   color: white;
 }
 footer{
