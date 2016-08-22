@@ -1,5 +1,5 @@
 <section class='container main-header'>
-  <h2>Order Total : {{findTotal()}}</h2>
+  <h2>Order Total : {{findTotal() | currency}}</h2>
 </section>
 <table class='container'>
   <thead>
@@ -19,15 +19,26 @@
         <h5>Rating : <small>{{item.rating}}</small></h5>
       </td>
       <td>
-        <h5>{{item.quantity}}</h5>
-        <select></select>
+        <div ng-show='item.quantitySet'>
+          <h5>{{item.quantity}}</h5>
+        </div>
+        <div ng-hide='item.quantitySet'>
+          <select ng-model='item.quantity'>
+            <option value='1' selected>1</option>
+            <option value='2'>2</option>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5</option>
+          </select>
+        </div>
       </td>
       <td>
         {{findSubtotal(item) | currency }}
       </td>
       <td>
-        <button>Edit</button>
-        <button>Remove</button>
+        <button ng-hide='item.quantitySet' ng-click='toggleQuantity(item)'>Edit</button>
+        <button ng-show='item.quantitySet' ng-click='toggleQuantity(item)'>Update</button>
+        <button ng-click='remove(item)'>Remove</button>
       </td>
     </tr>
   </tbody>

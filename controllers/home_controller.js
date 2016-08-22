@@ -7,6 +7,5 @@ app.controller('HomeController',function($scope, TeasService, BagService){
   $scope.vw.quantity = 1;
   $scope.vw.add = function(item, quantity){
     BagService.add(item, quantity);
-    console.log(BagService.all);
   }
 })

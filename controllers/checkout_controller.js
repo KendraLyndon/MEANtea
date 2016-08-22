@@ -13,4 +13,10 @@ app.controller('CheckoutController',function($scope, BagService){
     })
     return total;
   }
+  $scope.toggleQuantity = function(item){
+    item.quantitySet = !item.quantitySet;
+  }
+  $scope.remove = function(item){
+    BagService.remove(item);
+  }
 })

@@ -9,14 +9,59 @@ body{
 main{
   min-height: 75vh;
 }
+.main-header{
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+h1{
+  color: #FD644D;
+  font-size: 45px;
+  font-weight: bold;
+  font-style: italic;
+}
 form{
   display: inline;
 }
+label{
+  font-weight: normal;
+  margin-left: 15px;
+}
+input{
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
 table{
   border-collapse: collapse;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 thead, tr, .tea-image, td{
   border: 1px solid #E6E7E8;
+}
+th{
+  padding-left: 5px;
+  padding-right: 5px;
+  height: 2em;
+  font-size: 18px;
+}
+.th-sort{
+  font-size: 13px;
+  font-weight: lighter;
+  text-align: right;
+}
+td{
+  padding: 10px;
+}
+td > h3{
+  margin-top: 0;
+}
+.td-quantity{
+  text-align: right;
+  vertical-align: top;
 }
 #checkout-link{
   display: inline;
@@ -24,4 +69,22 @@ thead, tr, .tea-image, td{
   border: none;
   border-radius: 4px;
   color: white;
+}
+.add-button{
+  background-color: #EFAC56;
+  color: white;
+}
+footer{
+  margin-top: 20px;
+  text-align: center;
+}
+@media (min-width: 768px){
+  .main-header, table {
+    width: 750px;
+  }
+}
+@media (min-width: 992px){
+  .main-header, table {
+      width: 1100px;
+  }
 }

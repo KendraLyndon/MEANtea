@@ -20,8 +20,14 @@ app.factory('BagService', function(){
         this.all.push(item);
       }
     },
-    edit : function(item, quantity){
-      
+    remove : function(item){
+      var spliceIndex;
+      this.all.forEach(function(product,i){
+        if(product._id === item._id){
+          spliceIndex = i;
+        }
+      })
+      this.all.splice(spliceIndex,1);
     }
   }
 })
